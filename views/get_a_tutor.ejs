@@ -1,0 +1,278 @@
+<%- include('./partials/header.ejs') %>
+
+<body>
+    <div class="container my-5 p-4 form-container">
+        <h2>Get-A-Tutor: PIMOSH Enrolling Now - 2024 Summer Tutorial & Academic Mentoring 🌟</h2>
+        <p>Hey there, parents and guardians!
+            </br>
+            </br>
+            As we slide into the final quarter of the 2023-24 academic year, there's still time to give your child 
+            the extra academic support they need to finish strong! ✨ Whether it's catching up on missed concepts 
+            or staying ahead of the curve, our tutoring programs are here to help students excel.</p>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Personal Information -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-3">Personal Information</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstName" class="col-form-label col-form-label-sm">First Name</label>
+                        <input type="text" class="form-control form-control-sm" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName" class="col-form-label col-form-label-sm">Last Name</label>
+                        <input type="text" class="form-control form-control-sm" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dob" class="col-form-label col-form-label-sm">Date of Birth</label>
+                        <input type="date" class="form-control form-control-sm" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="gender" class="col-form-label col-form-label-sm">Gender</label>
+                        <select class="form-control form-control-sm" id="gender" name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Non-binary">Non-binary</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                        <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="contactNo" class="col-form-label col-form-label-sm">Contact Number</label>
+                        <input type="tel" class="form-control form-control-sm" id="contactNo" name="contactNo" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Information -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-3">Address Information</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="address" class="col-form-label col-form-label-sm">Address</label>
+                        <input type="text" class="form-control form-control-sm" id="address" name="address" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="city" class="col-form-label col-form-label-sm">City</label>
+                        <input type="text" class="form-control form-control-sm" id="city" name="city" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="state" class="col-form-label col-form-label-sm">State</label>
+                        <select class="form-control form-control-sm" id="state" name="state" required>
+                            <option value="" disabled selected>Select State</option>
+                            <!-- Add all state options here -->
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="zipCode" class="col-form-label col-form-label-sm">Zip Code</label>
+                        <input type="text" class="form-control form-control-sm" id="zipCode" name="zipCode" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interested Role -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-3">Interested Role</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="interestedRole" class="col-form-label col-form-label-sm">Select Interested Role(s)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="roleAdminSupport" name="interestedRole" value="Administrative Support">
+                            <label class="form-check-label" for="roleAdminSupport">Administrative Support</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="roleCoordSupervisor" name="interestedRole" value="Coordinating Supervisor">
+                            <label class="form-check-label" for="roleCoordSupervisor">Coordinating Supervisor</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="roleTutor" name="interestedRole" value="Tutorial and Academic Mentor">
+                            <label class="form-check-label" for="roleTutor">Tutorial and Academic Mentor</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses to Tutor -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-3">Courses to Tutor</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="courses" class="col-form-label col-form-label-sm">Select Courses</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseELA" name="courses" value="English/Language Arts">
+                            <label class="form-check-label" for="courseELA">English/Language Arts</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseFL" name="courses" value="Foreign Language">
+                            <label class="form-check-label" for="courseFL">Foreign Language</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseHistory" name="courses" value="History">
+                            <label class="form-check-label" for="courseHistory">History</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseMathElem" name="courses" value="Math - Elementary and Middle School">
+                            <label class="form-check-label" for="courseMathElem">Math - Elementary and Middle School</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseMathHS" name="courses" value="Math - High School">
+                            <label class="form-check-label" for="courseMathHS">Math - High School</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseSciHS" name="courses" value="Science - High School">
+                            <label class="form-check-label" for="courseSciHS">Science - High School</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseSTEM" name="courses" value="Science Technology (STEM)">
+                            <label class="form-check-label" for="courseSTEM">Science Technology (STEM)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="courseOther" name="courses" value="Other">
+                            <label class="form-check-label" for="courseOther">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-0">Additional Information</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="mostRecentSchool" class="col-form-label col-form-label-sm">Most Recent School</label>
+                        <input type="text" class="form-control form-control-sm" id="mostRecentSchool" name="mostRecentSchool" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="currentEmployment" class="col-form-label col-form-label-sm">Current Employment</label>
+                        <input type="text" class="form-control form-control-sm" id="currentEmployment" name="currentEmployment" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="aboutYou" class="col-form-label col-form-label-sm">Tell Us About Yourself</label>
+                        <textarea class="form-control form-control-sm" id="aboutYou" name="aboutYou" rows="4" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="interestInWorking" class="col-form-label col-form-label-sm">Why Are You Interested in Working with PIMOSH?</label>
+                        <textarea class="form-control form-control-sm" id="interestInWorking" name="interestInWorking" rows="4" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Documents -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-1">Upload Documents</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="coverLetter" class="col-form-label col-form-label-sm">Cover Letter</label>
+                        <input type="file" class="form-control form-control-sm" id="coverLetter" name="coverLetter" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="resume" class="col-form-label col-form-label-sm">Resume</label>
+                        <input type="file" class="form-control form-control-sm" id="resume" name="resume" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="selfie" class="col-form-label col-form-label-sm">Selfie</label>
+                        <input type="file" class="form-control form-control-sm" id="selfie" name="selfie" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How Did You Hear About Us? -->
+            <div class="container-fluid my-3 p-3 bg-white rounded">
+                <h4 class="mb-1">How Did You Hear About Us?</h4>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="howDidYouHear" class="col-form-label col-form-label-sm">Please Let Us Know</label>
+                        <select class="form-control form-control-sm" id="howDidYouHear" name="howDidYouHear" required>
+                            <option value="Social Media">Social Media</option>
+                            <option value="CMS Website">CMS Website</option>
+                            <option value="Career Fair">Career Fair</option>
+                            <option value="Tech-Titans">Tech-Titans</option>
+                            <option value="Referral">Referral</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-3 text-center">
+                <button type="submit" class="btn btn-primary" name="accepted" value="Not Accepted">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<%- include('../partials/footer.ejs') %>

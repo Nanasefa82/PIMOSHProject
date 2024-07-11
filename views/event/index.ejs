@@ -1,0 +1,108 @@
+<%- include('../partials/header.ejs') %>
+
+<head>
+  <title>PIMOSH Event Calendar</title>
+  <!-- Reference to CSS for styling the calendar -->
+  <link rel="stylesheet" href="/styles/calendar.css">
+  <!-- Moment.js for date manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <!-- Luxon for advanced date-time operations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.min.js"></script>
+</head>
+<body>  
+  <div class="container">
+    <div class="header-container">
+        <h1>PIMOSH Event Calendar for <%= moment({ year: year, month: month - 1 }).format('MMMM YYYY') %></h1>
+    </div>
+
+    <div class="calendar-navigation">
+        <% 
+            const prevMonth = month === 1 ? 12 : month - 1; 
+            const prevYear = month === 1 ? year - 1 : year; 
+            const nextMonth = month === 12 ? 1 : month + 1; 
+            const nextYear = month === 12 ? year + 1 : year; 
+        %>
+
+        <a href="/events?year=<%= prevYear %>&month=<%= prevMonth %>" class="btn btn-primary">Previous Month</a>
+        <a href="/events?year=<%= nextYear %>&month=<%= nextMonth %>" class="btn btn-primary">Next Month</a>
+    </div>
+
+    <div class="calendar-header">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+    </div>
+
+    <div class="calendar">
+        <% 
+            const firstDayOfMonth = moment({ year: year, month: month - 1 }).startOf('month').day();
+            const daysInPreviousMonth = moment({ year: year, month: month - 2 }).daysInMonth();
+            const totalDays = daysInMonth + firstDayOfMonth;
+            
+            // Add days from previous month
+            for (let i = firstDayOfMonth; i > 0; i--) { 
+                const prevDay = daysInPreviousMonth - i + 1;
+        %>
+            <div class="day">
+                <span class="day-number text-muted"><%= prevDay %></span>
+            </div>
+        <% 
+            } 
+
+            // Add days of current month
+            for (let day = 1; day <= daysInMonth; day++) { 
+        %>
+            <div class="day">
+                <span class="day-number"><%= day %></span>
+                <div class="events">
+                    <% 
+                        let hasEvent = false;
+                        events.forEach(event => { 
+                            const eventStartDate = moment(event.startDate);
+                            const eventEndDate = moment(event.endDate);
+                            const currentDate = moment({ year: year, month: month - 1, day });
+
+                            if (currentDate.isBetween(eventStartDate, eventEndDate, null, '[]')) { 
+                                hasEvent = true;
+                    %>
+                                <a href="/events/<%= event._id %>" class="event-title-link"><%= event.title %></a>
+                    <% 
+                            }
+                        });
+                        if (!hasEvent) { 
+                    %>
+                            <span class="no-event"></span>
+                    <% 
+                        } 
+                    %>
+                </div>
+            </div>
+        <% 
+            } 
+            
+            // Fill in the remaining days to complete the last week
+            const remainingDays = (7 - (totalDays % 7)) % 7;
+            for (let i = 1; i <= remainingDays; i++) { 
+        %>
+            <div class="day">
+                <span class="day-number text-muted"><%= i %></span>
+            </div>
+        <% 
+            } 
+        %>
+    </div>
+</div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const moment = window.moment; // Ensure Moment.js is accessible in the script
+          // Any additional JavaScript can go here
+      });
+  </script>
+</body>
+
+<%- include('../partials/footer.ejs') %>

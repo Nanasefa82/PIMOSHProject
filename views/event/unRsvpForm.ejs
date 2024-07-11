@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container my-5 p-4 form-container">
+
+        <div class="row mb-6">
+            <div class="col-12">
+                <h5><strong>Enter Phone Number</strong></h5>
+            </div>
+        </div>
+        <!-- Note the enctype attribute set to multipart/form-data -->
+        <form method="POST" action="/events/<%= event._id %>/rsvp">
+            <!-- Fields required for creating or updating an RSVP -->
+            <div id="rsvp-details">
+                <input type="text" id="phone" name="phone" required />
+              <button type="submit" name="status" value="No">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

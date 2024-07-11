@@ -1,0 +1,50 @@
+<%- include('../partials/header.ejs') %>
+
+<main>
+    <div class="container body-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1><strong><%= tutor.firstName %> <%= tutor.lastName %>'s Profile</strong></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <img class="img-fluid event-img" src="/uploads/images/<%= path.basename(tutor.selfie) %>" alt="Selfie of <%= tutor.firstName %> <%= tutor.lastName %>">
+            </div>
+            <div class="col-lg-9">
+                <div class="event-details">
+                    <p><strong>Name:</strong> <%= tutor.firstName +' '+tutor.lastName %></p>
+                    <p><strong>Date of Birth:</strong> <%= new Date(tutor.dob).toLocaleDateString() %></p>
+                    <p><strong>Phone Number:</strong> <%= tutor.phone %></p>
+                    <p><strong>Email:</strong> <%= tutor.email %></p>
+                    <p><strong>Address:</strong> <%= tutor.address+' ,' +tutor.state +', '+tutor.zipCode %></p>
+                    <p><strong>Recent Education:</strong> <%= tutor.recentEducation %></p>
+                    <p><strong>Subjects of Interest:</strong> <%= tutor.subjectsInterest.join(', ') %></p>
+                    <p><strong>Most Recent Employer:</strong> <%= tutor.recentEmployer %></p>
+                    <p><strong>Work Address:</strong> <%= tutor.workAddress %></p>
+                    <p><strong>Supervisor Phone Number:</strong> <%= tutor.supervisorPhone %></p>
+                    <p><strong>Emergency Contact 1:</strong> <%= tutor.emergencyContact1 %></p>
+                    <p><strong>Emergency Phone 1:</strong> <%= tutor.emergencyPhone1 %></p>
+                    <% if (tutor.emergencyContact2) { %>
+                        <p><strong>Emergency Contact 2:</strong> <%= tutor.emergencyContact2 %></p>
+                    <% } %>
+                    <% if (tutor.emergencyPhone2) { %>
+                        <p><strong>Emergency Phone 2:</strong> <%= tutor.emergencyPhone2 %></p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h3>Documents</h3>
+                <div class="event-details">
+                    <p><strong>Cover Letter:</strong> <a href="/uploads/documents/<%= path.basename(tutor.coverLetter) %>" target="_blank">View Cover Letter</a></p>
+                    <p><strong>Resume:</strong> <a href="/uploads/documents/<%= path.basename(tutor.resume) %>" target="_blank">View Resume</a></p>
+                    <p><strong>State ID:</strong> <a href="/uploads/documents/<%= path.basename(tutor.stateId) %>" target="_blank">View State ID</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer.ejs') %>

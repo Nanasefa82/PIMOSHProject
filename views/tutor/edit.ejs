@@ -1,0 +1,50 @@
+<%- include('../partials/header.ejs') %>
+
+<main class="container">
+    <h2>Edit Tutor Application</h2>
+    <form action="/tutors/<%= tutor._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="<%= tutor.email %>" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= tutor.name %>" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" value="<%= tutor.phone %>" required>
+        </div>
+        <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" class="form-control" id="position" name="position" value="<%= tutor.position %>" required>
+        </div>
+        <div class="form-group">
+            <label for="employer1">Most Recent Employer</label>
+            <input type="text" class="form-control" id="employer1" name="employer1" value="<%= tutor.employer1 %>" required>
+        </div>
+        <div class="form-group">
+            <label for="employer2">Employer Number Two</label>
+            <input type="text" class="form-control" id="employer2" name="employer2" value="<%= tutor.employer2 %>" required>
+        </div>
+        <div class="form-group">
+            <label for="coverLetter">Cover Letter</label>
+            <textarea class="form-control" id="coverLetter" name="coverLetter" required><%= tutor.coverLetter %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="selfie">Selfie</label>
+            <input type="text" class="form-control" id="selfie" name="selfie" value="<%= tutor.selfie %>" required>
+        </div>
+        <div class="form-group">
+            <label for="reference">Reference</label>
+            <input type="text" class="form-control" id="reference" name="reference" value="<%= tutor.reference %>" required>
+        </div>
+        <div class="form-group">
+            <label for="source">Source</label>
+            <input type="text" class="form-control" id="source" name="source" value="<%= tutor.source %>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Application</button>
+    </form>
+</main>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PIMOSH Event Calendar</title>
+  <link rel="stylesheet" href="/styles/calendar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.2/luxon.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header-container">
+      <h1>PIMOSH Event Calendar for <%= type %> Sessions - <%= moment({ year: year, month: month - 1 }).format('MMMM YYYY') %></h1>
+    </div>
+    <div class="calendar-navigation">
+      <% 
+        const prevMonth = month === 1 ? 12 : month - 1; 
+        const prevYear = month === 1 ? year - 1 : year; 
+        const nextMonth = month === 12 ? 1 : month + 1; 
+        const nextYear = month === 12 ? year + 1 : year; 
+      %>
+      <a href="/sessions/<%= type.toLowerCase() %>?year=<%= prevYear %>&month=<%= prevMonth %>" class="btn btn-primary">Previous Month</a>
+      <a href="/sessions/<%= type.toLowerCase() %>?year=<%= nextYear %>&month=<%= nextMonth %>" class="btn btn-primary">Next Month</a>
+    </div>
+    <div class="calendar-header">
+      <div>Sunday</div>
+      <div>Monday</div>
+      <div>Tuesday</div>
+      <div>Wednesday</div>
+      <div>Thursday</div>
+      <div>Friday</div>
+      <div>Saturday</div>
+    </div>
+    <div class="calendar">
+      <% 
+        const firstDayOfMonth = moment({ year: year, month: month - 1 }).startOf('month').day();
+        const daysInPreviousMonth = moment({ year: year, month: month - 2 }).daysInMonth();
+        const daysInMonth = moment({ year: year, month: month - 1 }).daysInMonth();
+        const totalDays = daysInMonth + firstDayOfMonth;
+        
+        // Add days from previous month
+        for (let i = firstDayOfMonth; i > 0; i--) { 
+          const prevDay = daysInPreviousMonth - i + 1;
+      %>
+        <div class="day">
+          <span class="day-number text-muted"><%= prevDay %></span>
+        </div>
+      <% 
+        } 
+
+        // Add days of current month
+        for (let day = 1; day <= daysInMonth; day++) { 
+      %>
+        <div class="day">
+          <span class="day-number"><%= day %></span>
+          <div class="events">
+            <% 
+              let hasEvent = false;
+              sessions.forEach(session => { 
+                const eventDate = moment(session.date).date();
+                if (eventDate === day) { 
+                  hasEvent = true;
+            %>
+                  <a href="/sessions/<%= session._id %>" class="event-title-link"><%= session.details %></a>
+            <% 
+                }
+              });
+              if (!hasEvent) { 
+            %>
+                <span class="no-event"></span>
+            <% 
+              } 
+            %>
+          </div>
+        </div>
+      <% 
+        } 
+        
+        // Fill in the remaining days to complete the last week
+        const remainingDays = (7 - (totalDays % 7)) % 7;
+        for (let i = 1; i <= remainingDays; i++) { 
+      %>
+        <div class="day">
+          <span class="day-number text-muted"><%= i %></span>
+        </div>
+      <% 
+        } 
+      %>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const moment = window.moment; // Ensure Moment.js is accessible in the script
+      // Any additional JavaScript can go here
+    });
+  </script>
+</body>
+</html>

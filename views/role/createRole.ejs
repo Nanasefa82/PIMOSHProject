@@ -1,0 +1,61 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container my-5 p-4 form-container">
+    <h2>Role Signup</h2>
+    <form action="/roles/signup" method="POST">
+        <!-- Personal Information -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Personal Information</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName" class="col-form-label col-form-label-sm">First Name</label>
+                    <input type="text" class="form-control form-control-sm" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName" class="col-form-label col-form-label-sm">Last Name</label>
+                    <input type="text" class="form-control form-control-sm" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="dob" class="col-form-label col-form-label-sm">Date of Birth</label>
+                    <input type="date" class="form-control form-control-sm" id="dob" name="dob" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="contactNo" class="col-form-label col-form-label-sm">Contact Number</label>
+                    <input type="tel" class="form-control form-control-sm" id="contactNo" name="contactNo" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                    <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role Information -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Role Information</h4>
+            <hr>
+            <div class="form-group col-md-6">
+                <label for="role" class="col-form-label col-form-label-sm">Select Role</label>
+                <select class="form-control form-control-sm" id="role" name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="Administrator">Administrator</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Volunteer">Volunteer</option>
+                    <option value="Certified Teacher">Certified Teacher</option>
+                    <option value="Intern (from College or University)">Intern (from College or University)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container my-3 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/footer.ejs') %>

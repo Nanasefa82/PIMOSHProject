@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<main>
+    <div class="container body-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1><strong><%= event.title %></strong></h1>
+                <!-- Display the RSVP buttons if the logged-in user is not the host -->
+                <div class="container">
+                    <a href="/events/<%= event._id %>/newRsvp" class="btn btn-primary">RSVP</a>
+                    <a href="/events/<%= event._id %>/unRsvp" class="btn btn-primary">UnRSVP</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- Ensure the image path is correct -->
+                <img class="event-img" src="<%= event.image %>" alt="Flyer for <%= event.title %>">
+            </div>
+            <div class="col-lg-9">
+                <div class="event-details">
+                    <p><strong>Date and Time:</strong> <%= formattedStartDate %> to <%= formattedEndDate %></p>
+                    <p><strong>Location:</strong> <%= event.location %></p>
+                    <p><strong>Details:</strong> <%= event.details %></p>
+                    <p>Number of rsvps: <%= RSVPCount %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer.ejs') %>

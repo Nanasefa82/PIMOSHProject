@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="main-body">
+    <div class="container body-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h5><strong>Create New Session</strong></h5>
+            </div>
+        </div>
+        <form method="POST" action="/sessions">
+            <div class="form-row align-items-center">
+                <div class="col-sm-3">
+                    <label for="date">Date</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-sm-3">
+                    <label for="startTime">Time</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="time" class="form-control" id="startTime" name="startTime" required>
+                </div>
+            </div>
+            <div class="form-row align-items-center">
+                <div class="col-sm-3">
+                    <label for="details">Details:</label>
+                </div>
+                <div class="col-sm-9">
+                    <textarea class="form-control" id="details" name="details" rows="2" required></textarea>
+                </div>
+            </div>
+            <button type="submit" name="booked" value="No">Submit</button>
+
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

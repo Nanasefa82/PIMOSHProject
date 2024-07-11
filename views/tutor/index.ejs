@@ -1,0 +1,47 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container mt-6">
+    <h2 class="mb-3"><%= user.firstName %> <%= user.lastName %>'s Tutor Applications</h2>
+    <% if (tutors.length) { %>
+        <table class="table table-hover show-table-custom">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="text-left">Email</th>
+                    <th scope="col" class="text-left">First Name</th>
+                    <th scope="col" class="text-left">Last Name</th>
+                    <th scope="col" class="text-left">Phone</th>
+                    <th scope="col" class="text-left">Created At</th>
+                    <th scope="col" class="text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% tutors.forEach(tutor => { %>
+                    <tr>
+                        <td class="text-left"><%= tutor.email %></td>
+                        <td class="text-left"><%= tutor.firstName %></td>
+                        <td class="text-left"><%= tutor.lastName %></td>
+                        <td class="text-left"><%= tutor.phone %></td>
+                        <td class="text-left"><%= new Date(tutor.createdAt).toLocaleDateString() %></td>
+                        <td class="text-left">
+                            <a href="/tutors/<%= tutor._id %>" class="btn btn-sm btn-info mr-2">View</a>
+                            <a href="/edit/<%= tutor._id %>" class="btn btn-sm btn-warning mr-2">Edit</a>
+                            <form action="/tutor/<%= tutor._id %>?_method=DELETE" method="POST" class="d-inline-block">
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                            <form action="/tutor/<%= tutor._id %>/reject" method="POST" class="d-inline-block">
+                                <button type="submit" class="btn btn-sm btn-secondary">Reject</button>
+                            </form>
+                            <form action="/tutor/<%= tutor._id %>/approve" method="POST" class="d-inline-block">
+                                <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>You haven't created any tutor applications yet.</p>
+    <% } %>
+</div>
+
+<%- include('../partials/footer.ejs') %>

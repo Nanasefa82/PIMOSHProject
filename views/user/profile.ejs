@@ -1,0 +1,102 @@
+<%- include('../partials/header.ejs') %>
+    <div class="container">
+        <h1><%= user.firstName %> <%= user.lastName %>'s Profile</h1>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="empty-tab" data-toggle="tab" href="#empty" role="tab" aria-controls="empty" aria-selected="true">Empty</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tutors-tab" data-toggle="tab" href="#tutors" role="tab" aria-controls="tutors" aria-selected="false">Tutors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="events-tab" data-toggle="tab" href="#events" role="tab" aria-controls="events" aria-selected="false">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="admins-tab" data-toggle="tab" href="#admins" role="tab" aria-controls="admins" aria-selected="false">Admins</a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                <!-- Content for admins tab -->
+                <div class="container-fluid">
+                    <h3>EVENTS Tab Content</h3>
+                    <p>This is the content for the EVENTS tab.</p>
+                    <a class="nav-link" href="/events/new">New Event</a>
+                    <tbody>
+                        <% events.forEach(event => { %>
+                            <tr>
+                                <td class="text-left"><%= event.title %></td>
+                                <td class="text-left">
+                                    <a href="/events/<%= event._id %>" class="btn btn-sm btn-info mr-2">View</a>
+                                    <a href="/events/<%= event.id %>/edit" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                    <form action="/events/<%= event.id %>?_method=DELETE" method="POST" class="d-inline-block">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tutors" role="tabpanel" aria-labelledby="tutors-tab">
+                <!-- Content for tutors tab -->
+                <div class="container-fluid">
+                    <h3 class="mb-3"><%= user.firstName %> <%= user.lastName %>'s Tutor Applications</h3>
+                    <% if (tutors.length) { %>
+                        <table class="table table-hover show-table-custom">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="text-left">Email</th>
+                                    <th scope="col" class="text-left">First Name</th>
+                                    <th scope="col" class="text-left">Last Name</th>
+                                    <th scope="col" class="text-left">Phone</th>
+                                    <th scope="col" class="text-left">Created At</th>
+                                    <th scope="col" class="text-left">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% tutors.forEach(tutor => { %>
+                                    <tr>
+                                        <td class="text-left"><%= tutor.email %></td>
+                                        <td class="text-left"><%= tutor.firstName %></td>
+                                        <td class="text-left"><%= tutor.lastName %></td>
+                                        <td class="text-left"><%= tutor.phone %></td>
+                                        <td class="text-left"><%= new Date(tutor.createdAt).toLocaleDateString() %></td>
+                                        <td class="text-left">
+                                            <a href="/tutors/<%= tutor._id %>" class="btn btn-sm btn-info mr-2">View</a>
+                                            <a href="/edit/<%= tutor._id %>" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                            <form action="/tutor/<%= tutor._id %>?_method=DELETE" method="POST" class="d-inline-block">
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                            <form action="/tutor/<%= tutor._id %>/reject" method="POST" class="d-inline-block">
+                                                <button type="submit" class="btn btn-sm btn-secondary">Reject</button>
+                                            </form>
+                                            <form action="/tutor/<%= tutor._id %>/approve" method="POST" class="d-inline-block">
+                                                <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p>You haven't created any tutor applications yet.</p>
+                    <% } %>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="admins" role="tabpanel" aria-labelledby="admins-tab">
+                <!-- Content for admins tab -->
+                <h3>Admins Tab Content</h3>
+                <p>This is the content for the Admins tab.</p>
+                <a class="nav-link" href="/sessions/new">New Session</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Include tabs.js script -->
+<script src="/js/tabs.js"></script>
+
+<%- include('../partials/footer.ejs') %>

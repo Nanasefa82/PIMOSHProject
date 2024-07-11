@@ -1,0 +1,74 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="main-body">
+    <div class="container body-container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h5><strong>RSVP Form</strong></h5>
+            </div>
+        </div>
+        <!-- Note the enctype attribute set to multipart/form-data -->
+        <form method="POST" action="/events/<%= event._id %>/rsvp">
+            <!-- Fields required for creating or updating an RSVP -->
+            <div id="rsvp-details">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" />
+                
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" />
+                
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" required />
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"  />
+                
+                <label for="forWho">For Who</label>
+                <select id="forWho" name="forWho" >
+                    <option value="">Select an option</option>
+                    <option value="My Child">My Child</option>
+                    <option value="Myself">Myself</option>
+                    <option value="Family (dad/Mom + children)">Family (dad/Mom + children)</option>
+                    <option value="PIMOSH Coordinating Supervisor">PIMOSH Coordinating Supervisor</option>
+                    <option value="PIMOSH OSTT Coordinator">PIMOSH OSTT Coordinator</option>
+                    <option value="PIMOSH Tutor-Mentor">PIMOSH Tutor-Mentor</option>
+                    <option value="PIMOSH Volunteer">PIMOSH Volunteer</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="members">Members</label>
+                <input type="text" id="members" name="members"  />
+                
+                <label for="repSchool">Representative School</label>
+                <select id="repSchool" name="repSchool" >
+                    <option value="">Select a school</option>
+                    <option value="Charlotte East Language Academy">Charlotte East Language Academy</option>
+                    <option value="McClintock Middle School">McClintock Middle School</option>
+                    <option value="McKinney-Vento Designee">McKinney-Vento Designee</option>
+                    <option value="Oakdale Elementary School">Oakdale Elementary School</option>
+                    <option value="Pitt School Road Elementary School, Concord">Pitt School Road Elementary School, Concord</option>
+                    <option value="Ranson IB Middle School">Ranson IB Middle School</option>
+                    <option value="Ridge Road High School">Ridge Road High School</option>
+                    <option value="River Gate Elementary School">River Gate Elementary School</option>
+                    <option value="Roberta Road Middle School, Concord, NC">Roberta Road Middle School, Concord, NC</option>
+                    <option value="Sharon Elementary School">Sharon Elementary School</option>
+                    <option value="West Charlotte High School">West Charlotte High School</option>
+                    <option value="Winget Park STEM Elementary School">Winget Park STEM Elementary School</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount"  />
+                
+                <label for="special">Special Instructions</label>
+                <textarea id="special" name="special"></textarea>
+            </div>
+        
+            <!-- Fields always required -->
+        
+            <button type="submit" name="status" value="Yes">Submit</button>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

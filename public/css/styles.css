@@ -1,0 +1,500 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* HTML and Body */
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Text Elements */
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+main {
+    flex: 1 0 auto; /* Allow main to grow and shrink */
+    padding-top: 10px; /* Add padding to avoid content being hidden behind fixed navbar */
+    padding-bottom: 10px; /* Add padding to avoid content being hidden behind fixed footer */
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Section Title */
+.form-container h4 {
+    background-color: #79507A;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form-container .form-group {
+    margin-bottom: 5px;
+}
+
+.form-container .form-row {
+    margin-bottom: 5px;
+}
+
+/* Form Control and Form Group */
+.form-group {
+    margin-bottom: 0.2rem; /* Reduced margin for compact layout */
+}
+
+.form-control, .form-control-file {
+    width: 100%;
+    font-size: 0.9em; /* Reduced font size for readability */
+    padding: 5px; /* Reduced padding for compact layout */
+}
+
+/* Form Check Styling */
+.form-check {
+    margin-bottom: 0.5rem; /* Reduced margin for compact layout */
+}
+
+.form-check-label {
+    font-size: 0.9em; /* Reduced font size for readability */
+}
+
+/* Compact Button Styling */
+.btn {
+    font-size: 0.9em; /* Reduced font size for readability */
+    padding: 5px 10px; /* Reduced padding for compact layout */
+}
+
+/* Navbar and Carousel Container */
+.header-container {
+    width: 100%;
+    background-color: #79507A;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #79507A;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed; /* Changed to sticky */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a.nav-link {
+    color: #fff;
+}
+
+.navbar a.nav-link:hover {
+    color: #ccc;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+/* Centered Navbar Links */
+.navbar .navbar-nav {
+    margin: 0 auto;
+}
+
+/* Dropdown Menu */
+.navbar .nav-item.dropdown {
+    position: relative;
+}
+
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu .dropdown-item {
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    background-color: transparent;
+    border: 0;
+}
+
+.navbar .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.navbar .nav-item.dropdown .dropdown-divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    z-index: 1;
+    margin-top: 70px; /* Add margin to avoid overlap with navbar */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    background-color: #79507A;
+    border: none;
+    transform: rotate(45deg);
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+/* Footer */
+.footer {
+    background-color: #79507A;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 10px 0; /* Reduced padding for compact layout */
+    text-align: left;
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer ul {
+    padding-left: 0;
+    margin: 0; /* Reduced margin for compact layout */
+}
+
+.footer ul li {
+    list-style: none;
+    margin-bottom: 5px; /* Reduced margin for compact layout */
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.media-links {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+
+    .media-links {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Services Section */
+.head-serv {
+    text-align: center;
+    font-style: inherit;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    max-width: 300px; /* Adjust the max width as needed */
+    min-height: 400px; /* Ensures all cards are the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-container {
+    background: #79507A;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ensure form-control and form-control-file classes are properly styled */
+.form-control,
+.form-control-file {
+    width: 100%;
+}
+
+/* Additional margin for form groups */
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+.image-with-text-banner {
+    background-image: url('img/Banner.jpg'); /* Adjust path as necessary */
+    background-size: cover;
+    width: 1349px;
+    height: 320px;
+    color: black;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.image-with-text-new {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.event-img {
+    width: 250px;
+    height: 250px;
+}
+
+.event-title {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.event-text {
+    font-size: 25px;
+}
+
+.text-with-space {
+    padding-bottom: 15.3%;
+}
+
+.calendar-navigation {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar-navigation .btn {
+    margin: 0 10px;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    gap: 10px;
+    padding: 10px;
+}
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    gap: 10px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 10px; /* Add rounded corners */
+}
+.day-number {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.events {
+    margin-top: 30px;
+}
+.event-title-link {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    margin-top: 5px;
+    font-family: 'Arial', sans-serif; /* Change the font here */
+    font-size: 16px; /* Adjust the font size if needed */
+    font-weight: bold; /* Make the font bold if desired */
+}
+.no-event {
+    color: grey;
+    font-style: italic;
+}
+.header-container {
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+.main-body {
+    background-color: #f8f9fa;
+    padding: 30px;
+}
+.body-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 900px; /* Set maximum width */
+    margin: 0 auto; /* Center align */
+}
+.form-row {
+    margin-bottom: 15px;
+}
+.main-body {
+    background-color: #f8f9fa;
+    padding: 30px;
+}
+.body-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 900px; /* Set maximum width */
+    margin: 0 auto; /* Center align */
+}
+.form-row {
+    margin-bottom: 15px;
+}
+.form-control, .form-control-file {
+    border-radius: 4px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.col-sm-3 label {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.col-sm-3 label {
+    font-weight: bold;
+}
+/* Custom CSS to remove markers from nav-tabs */
+.nav-tabs .nav-item {
+    list-style-type: none; /* Remove markers from list items */
+}
+
+.flash-messages {
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.flash-messages.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    font: inherit
+}
+
+.flash-messages.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

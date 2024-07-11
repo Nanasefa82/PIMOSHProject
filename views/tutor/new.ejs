@@ -1,0 +1,363 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="container my-5 p-4 form-container">
+    <h2>Be-A-Tutor</h2>
+    <form action="/tutors/" method="POST" enctype="multipart/form-data">
+        <!-- Section 1: Team or Volunteer Applicant Information -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Team or Volunteer Applicant Information</h4>
+            <hr>
+            <!-- Personal Information -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstName" class="col-form-label col-form-label-sm">First Name</label>
+                    <input type="text" class="form-control form-control-sm" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName" class="col-form-label col-form-label-sm">Last Name</label>
+                    <input type="text" class="form-control form-control-sm" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="dob" class="col-form-label col-form-label-sm">Date of Birth</label>
+                    <input type="date" class="form-control form-control-sm" id="dob" name="dob" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone" class="col-form-label col-form-label-sm">Phone Number</label>
+                    <input type="tel" class="form-control form-control-sm" id="phone" name="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                    <input type="email" class="form-control form-control-sm" id="email" name="email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="address" class="col-form-label col-form-label-sm">Address</label>
+                    <input type="text" class="form-control form-control-sm" id="address" name="address" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city" class="col-form-label col-form-label-sm">City</label>
+                    <input type="text" class="form-control form-control-sm" id="city" name="city" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="state" class="col-form-label col-form-label-sm">State</label>
+                    <select class="form-control form-control-sm" id="state" name="state" required>
+                        <option value="" disabled selected>Select State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="zipCode" class="col-form-label col-form-label-sm">Zip Code</label>
+                    <input type="text" class="form-control form-control-sm" id="zipCode" name="zipCode" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="stateId" class="col-form-label col-form-label-sm">State ID</label>
+                    <input type="file" class="form-control form-control-sm" id="stateId" name="stateId" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="sessionType" class="col-form-label col-form-label-sm">Session Type</label>
+                    <select class="form-control form-control-sm" id="sessionType" name="sessionType" required>
+                        <option value="InPerson">In Person</option>
+                        <option value="Virtual">Virtual</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="siteLocation" class="col-form-label col-form-label-sm">Site Location</label>
+                    <input type="text" class="form-control form-control-sm" id="siteLocation" name="siteLocation">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="teamLead" class="col-form-label col-form-label-sm">Team Lead</label>
+                    <input type="text" class="form-control form-control-sm" id="teamLead" name="teamLead">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="pimoshRole" class="col-form-label col-form-label-sm">Pimosh Role</label>
+                    <select class="form-control form-control-sm" id="pimoshRole" name="pimoshRole" required>
+                        <option value="Admin">Admin</option>
+                        <option value="Coordinating Supervisor">Coordinating Supervisor</option>
+                        <option value="Tutor-Mentor">Tutor-Mentor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Team Member's Most Recent Education & Subjects of Interest -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Team Member's Most Recent Education & Subjects of Interest</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="recentEducation" class="col-form-label col-form-label-sm">Most Recent Education</label>
+                    <input type="text" class="form-control form-control-sm" id="recentEducation" name="recentEducation" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label class="col-form-label col-form-label-sm">Subjects of Interest</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="businessEtiquette" name="subjectsInterest[]" value="Business Etiquette">
+                        <label class="form-check-label" for="businessEtiquette">Business Etiquette</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="englishReading" name="subjectsInterest[]" value="English (Reading)">
+                        <label class="form-check-label" for="englishReading">English (Reading)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="languageArts" name="subjectsInterest[]" value="Language Arts">
+                        <label class="form-check-label" for="languageArts">Language Arts</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="math" name="subjectsInterest[]" value="Math">
+                        <label class="form-check-label" for="math">Math</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="technology" name="subjectsInterest[]" value="Technology">
+                        <label class="form-check-label" for="technology">Technology</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="civics" name="subjectsInterest[]" value="Civics">
+                        <label class="form-check-label" for="civics">Civics</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="history" name="subjectsInterest[]" value="History">
+                        <label class="form-check-label" for="history">History</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="foreignLanguage" name="subjectsInterest[]" value="Foreign Language">
+                        <label class="form-check-label" for="foreignLanguage">Foreign Language</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="science" name="subjectsInterest[]" value="Science">
+                        <label class="form-check-label" for="science">Science</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="otherSubject" name="subjectsInterest[]" value="Other">
+                        <label class="form-check-label" for="otherSubject">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Team Member's Parent/Guardian (if under 18) & Work History -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Team Member's Parent/Guardian (if under 18) & Work History</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="guardianName" class="col-form-label col-form-label-sm">Guardian Name (if under 18)</label>
+                    <input type="text" class="form-control form-control-sm" id="guardianName" name="guardianName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="guardianAddress" class="col-form-label col-form-label-sm">Guardian Address</label>
+                    <input type="text" class="form-control form-control-sm" id="guardianAddress" name="guardianAddress">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="recentEmployer" class="col-form-label col-form-label-sm">Most Recent Employer</label>
+                    <input type="text" class="form-control form-control-sm" id="recentEmployer" name="recentEmployer" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="workAddress" class="col-form-label col-form-label-sm">Work Address</label>
+                    <input type="text" class="form-control form-control-sm" id="workAddress" name="workAddress" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="supervisorPhone" class="col-form-label col-form-label-sm">Supervisor Phone Number</label>
+                    <input type="tel" class="form-control form-control-sm" id="supervisorPhone" name="supervisorPhone" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: How Did You Learn About PIMOSH & Health Snapshot -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">How Did You Learn About PIMOSH & Health Snapshot</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label class="col-form-label col-form-label-sm">How Did You Learn About PIMOSH</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="socialMedia" name="learnAboutPimosh[]" value="Social Media">
+                        <label class="form-check-label" for="socialMedia">Social Media</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="cmsWebsite" name="learnAboutPimosh[]" value="CMS Website">
+                        <label class="form-check-label" for="cmsWebsite">CMS Website</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="careerFair" name="learnAboutPimosh[]" value="Career Fair">
+                        <label class="form-check-label" for="careerFair">Career Fair</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="techTitans" name="learnAboutPimosh[]" value="Tech-Titans">
+                        <label class="form-check-label" for="techTitans">Tech-Titans</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="referral" name="learnAboutPimosh[]" value="Referral">
+                        <label class="form-check-label" for="referral">Referral</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="otherSource" name="learnAboutPimosh[]" value="Other">
+                        <label class="form-check-label" for="otherSource">Other</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="allergiesMedications" class="col-form-label col-form-label-sm">Allergies/Medications</label>
+                    <input type="text" class="form-control form-control-sm" id="allergiesMedications" name="allergiesMedications">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Health Snapshot & Emergency Contact Information -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Health Snapshot & Emergency Contact Information</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="emergencyContact1" class="col-form-label col-form-label-sm">Emergency Contact 1</label>
+                    <input type="text" class="form-control form-control-sm" id="emergencyContact1" name="emergencyContact1" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="emergencyPhone1" class="col-form-label col-form-label-sm">Emergency Phone 1</label>
+                    <input type="tel" class="form-control form-control-sm" id="emergencyPhone1" name="emergencyPhone1" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="emergencyContact2" class="col-form-label col-form-label-sm">Emergency Contact 2</label>
+                    <input type="text" class="form-control form-control-sm" id="emergencyContact2" name="emergencyContact2">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="emergencyPhone2" class="col-form-label col-form-label-sm">Emergency Phone 2</label>
+                    <input type="tel" class="form-control form-control-sm" id="emergencyPhone2" name="emergencyPhone2" pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: General Agreement, Consent & Authorization Sign-On Line -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">General Agreement, Consent & Authorization Sign-On Line</h4>
+            <hr>
+            <div class="form-group">
+                <label for="generalInfo" class="col-form-label col-form-label-sm">General Information</label>
+                <textarea class="form-control form-control-sm" id="generalInfo" name="generalInfo" rows="6" readonly>
+By signing this form, you acknowledge that you are over 18 years old and have the minimum high school diploma education. You understand that People Involved in Motivating Our Students Higher (PIMOSH) provides ACADEMICS: (1) Tutorial & Mentoring Services; (2) Intensive Arts Education & Technology Institute; (3) Tech Titans STEM Opportunities for Youth; and (4) Work-Based Learning & Apprenticeship Programs.
+As a Team Member at PIMOSH, you also acknowledge a Non-Disclosure and Compete. You will not share trade secrets with administrators, parents, guardians, guidance counselors, students, teachers, principals, or others you may contact. You agree to all costs associated with contracted employment and are responsible for all tax-related responsibilities. You authorize PIMOSH to notify emergency 911 phone call in case of (if necessary) and grant your permission to use media, photographs, video, and other likenesses to further the development and growth of The PIMOSH Network.
+You fully defend, indemnify, and hold harmless from any claims, lawsuits, or liability, demands cause of harm, danger, or injury, including property damage or loss. You or your likeness may feature in educational works intended for circulation and distribution at Free Public Libraries across the United States. These include but are not limited to books, Music for Learning, and Crunch Bunch Kids Brand. PIMOSH Productions are ALWAYS child & family-friendly, kid-tested topical content approved.
+                </textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agreementAcknowledged" name="agreementAcknowledged" required>
+                        <label class="form-check-label" for="agreementAcknowledged">I Agree</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="signature" class="col-form-label col-form-label-sm">Signature</label>
+                    <input type="text" class="form-control form-control-sm" id="signature" name="signature" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="todayDate" class="col-form-label col-form-label-sm">Date</label>
+                    <input type="date" class="form-control form-control-sm" id="todayDate" name="todayDate" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="initials" class="col-form-label col-form-label-sm">Initials</label>
+                    <input type="text" class="form-control form-control-sm" id="initials" name="initials" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Documents -->
+        <div class="container-fluid my-3 p-3 bg-white rounded">
+            <h4 class="mb-3">Documents</h4>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="coverLetter" class="col-form-label col-form-label-sm">Cover Letter</label>
+                    <input type="file" class="form-control form-control-sm" id="coverLetter" name="coverLetter" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selfie" class="col-form-label col-form-label-sm">Selfie</label>
+                    <input type="file" class="form-control form-control-sm" id="selfie" name="selfie" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="resume" class="col-form-label col-form-label-sm">Resume</label>
+                    <input type="file" class="form-control form-control-sm" id="resume" name="resume" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-3 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/footer.ejs') %>

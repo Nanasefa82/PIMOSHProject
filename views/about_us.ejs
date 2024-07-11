@@ -1,0 +1,540 @@
+<head>
+    <%- include('./partials/header.ejs') %>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <!--This stylesheet affects the header look and the tab look
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+    <title>About Us</title>
+</head>
+
+<body class="about-us-content">
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: scroll;
+            background-color: #ffffff;
+        }
+
+        .tab-content {
+            padding: 20px;
+            background-color: #ffffff;
+            color: #79507A;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+        }
+
+        .nav-tabs .nav-link {
+            background-color: #fbf9fb;
+            color: #79507A;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .nav-tabs .nav-link:hover, .nav-tabs .nav-link.active {
+            background-color: #777;
+            color: #fbf9fb;
+        }
+        
+        .content-text >p
+        {
+            color:#000000;
+            font-size: larger;
+        }
+        
+        .tab-pane > p{
+            color:#79507A;
+            font-size: x-large;
+        }
+        .tab-pane > h3{
+            text-decoration: underline;
+            color:#79507A;
+        }
+        .links {
+            text-decoration: underline;
+        }
+    </style>
+    <!--About Us PIMOSH information-->
+    <!--Need to fix tabs to make it functional-->
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Learn more about what PIMOSH is and what we stand for!</p>
+      
+        <ul class="nav nav-tabs nav-fill" role="tablist" id="myTab">
+            <li class="nav-item">
+                <a class="nav-link active about_us_tab" data-bs-toggle="tab" href="#About" role="tab" id="about-tab">
+                    About Us
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link about_us_tab" data-bs-toggle="tab" href="#Mission" role="tab" id="mission-tab">Our Mission</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link about_us_tab" data-bs-toggle="tab" href="#Diversity" role="tab" id="diversity-tab">Diversity Statement</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link about_us_tab" data-bs-toggle="tab" href="#Leadership" role="tab" id="leadership-tab">Leadership & Staff Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link about_us_tab" data-bs-toggle="tab" href="#Community" role="tab" id="community-tab">Community Impact</a>
+            </li>
+        </ul>
+      
+        <div class="tab-content" id="content" role="tablist">
+          <div id="About" class="tab-pane fade show active content-text" role="tabpanel" aria-labelledby="about-tab">
+            <h3>About Us</h3>
+            <p>PIMOSH is a community organization that provides children and families access to high-quality 
+                  arts education and technology programs. For 20 years, we have been committed to motivating 
+                  and inspiring students to reach their full potential through innovative and engaging 
+                  learning experiences. 
+              <br />
+              <br />
+              Our mission is to empower young people to express themselves creatively, think critically, and 
+              develop the skills they need to succeed in today's digital world. Through our programs, we strive 
+              to foster a love of learning, build self-confidence, and provide opportunities for personal 
+              growth and achievement.
+              </p>
+          </div>
+          <!--Adding "show active" under class until the tabs are figured out-->
+          <div id="Mission" class="tab-pane fade content-text" role="tabpanel" aria-labelledby="mission-tab">
+            <h3>Our Mission</h3>
+            <p>At PIMOSH, we envision a world where every child experiences opportunities to unlock their 
+                  full potential and unleash their creativity through the power of arts and technology 
+                  education. We believe that every child is capable of greatness and are committed to 
+                  empowering, inspiring, and igniting their passions, nurturing their talents, and 
+                  encouraging them to dream big. 
+              <br />
+              <br />
+              Together, we will bridge the gap of opportunity, fostering a community where every child 
+              is valued, supported, and challenged to achieve their wildest aspirations, where no dream 
+              is too big, and no challenge is too great. We will create a brighter future for every 
+              child and leave a lasting legacy of innovation, inspiration, and hope.
+              </p>
+          </div>
+          <div id="Diversity" class="tab-pane fade content-text" role="tabpanel" aria-labelledby="diversity-tab">
+            <h3>Diversity Statement</h3>
+            <p>Diversity and inclusion are core values of PIMOSH. Every person has unique experiences, 
+                  perspectives, and talents that contribute to the richness and strength of our 
+                  organization. We are committed to creating an inclusive environment where all 
+                  individuals feel respected, valued, and empowered. We actively seek out and welcome 
+                  overachieving individuals from diverse backgrounds and experiences and actively work 
+                  to remove barriers to participation and success.<br />
+              <br />
+              We recognize that diversity goes beyond race and ethnicity. It also encompasses 
+              differences in gender, age, sexual orientation, socioeconomic status, religion, abilities, 
+              and more. We work hard to create a positive, welcoming, and inclusive environment for all 
+              members and participants of our organization. We will strive to develop a culture of equity 
+              where everyone has an equal opportunity to succeed and feels a sense of belonging.
+              <br />
+              <br />
+              We also acknowledge that inclusion and diversity are ongoing efforts. We will continuously 
+              work to identify and address any implicit bias, discrimination, and barriers that prevent 
+              individuals from fully participating in our programs and initiatives. We are committed to 
+              taking action and being held accountable for creating a genuinely inclusive environment.
+              <br />
+              <br />
+              We believe that embracing diversity and inclusion is not only the right thing to do but 
+              also essential to the success of our organization and the communities we serve.
+              </p>
+          </div>
+          <div id="Leadership" class="tab-pane fade content-text" role="tabpanel" aria-labelledby="leadership-tab">
+            <h3>Leadership & Staff Developement</h3>
+            <p>At PIMOSH, strong leadership and staff development are crucial to unlocking the full 
+                  potential of our programs and the individuals who make them a reality. We are committed 
+                  to investing in the growth and development of our program leaders and staff members, 
+                  providing them with the tools and resources they need to excel in their roles.
+              <br />
+              <br />
+              We understand that leadership is about having a solid vision and the ability to inspire 
+              and empower others to achieve their best. Our leaders are passionate and dedicated individuals 
+              committed to creating a culture of excellence where everyone is encouraged to take risks and 
+              be innovative.
+              <br />
+              <br />
+              Staff development is necessary for individuals and the organization to succeed. We empower 
+              our staff to take ownership of their professional development, providing them with training, 
+              mentorship, and networking opportunities. We strive to create a culture of continuous 
+              learning where everyone has the opportunity to grow and develop.
+              <br />
+              <br />
+              We know that when our leaders and staff are empowered, motivated and inspired, it positively 
+              impacts the communities we serve. Investing in our people enhances our programs' success 
+              and creates a brighter future for all.</p>
+          </div>
+          <div id="Community" class="tab-pane fade content-text" role="tabpanel" aria-labelledby="community-tab">
+            <h3>Community Impact</h3>
+            <p>At PIMOSH, our programs and initiatives have the power to make a positive impact on the 
+              communities we serve. We are committed to working closely with local organizations, 
+              schools, and families to understand our community's unique needs and challenges and 
+              to create programs that address them.
+              <br />
+              <br />
+              We strive to create a culture of community engagement, where we actively involve community 
+              members in the design, implementation, and evaluation of our programs. Working together 
+              with the community can create meaningful and sustainable change that benefits everyone.
+              <br />
+              <br />
+              We understand that our programs go beyond providing access to arts and technology education; 
+              they also promote social and emotional well-being, foster creativity, and build self-confidence. 
+              Our programs strive to create opportunities for personal growth, achievement, and success 
+              for all community members, especially those under-served or marginalized.
+              <br />
+              <br />
+              We are proud of our program's impact on the community and are committed to working with 
+              community members to create a brighter future for all.
+              <br />
+              <br />
+              At PIMOSH, our programs and initiatives have the power to make a positive impact on the 
+              various communities we serve. We understand that every community is unique, with different 
+              needs and challenges. We are committed to working closely with local organizations, schools, 
+              and families to understand these needs and design programs that address them. We strive to 
+              create a culture of community engagement, where we actively involve community members in the 
+              design, implementation, and evaluation of our programs.
+              <br />
+              <br />
+              We are committed to serving diverse communities and understand that diversity goes beyond 
+              race and ethnicity. It also encompasses differences in gender, age, sexual orientation, 
+              socioeconomic status, religion, abilities, and more. We strive to create opportunities that 
+              are inclusive and accessible to all members of the community, especially for those who are 
+              underserved or marginalized.
+              <br />
+              <br />
+              We are proud of our program's impact on the community and are committed to growing our efforts 
+              to reach and serve more communities. We understand that our programs go beyond providing 
+              access to arts and technology education; they also promote social and emotional well-being, 
+              foster creativity, and build self-confidence. PIMOSH dedicates its resources to creating a 
+              brighter future for all community members through our programs and initiatives.
+            </p>
+          </div>
+        </div>
+        <script src="/js/tabs.js"></script>
+        <script src="/js/about_us_tabs.js"></script>
+    </div>
+      
+    <!--Contact Miss Patrina-->
+    <div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+        <div class="row d-flex justify-content-center" >
+            <img src="img/miss-patrina.jpg" class="rounded-circle col-sm-2" alt="Miss Patrina">
+            <div class="col-sm-6 content-text">
+                <p>"Hello, It's me again.  I you see a "C" or lower, Call Me (Ms. Patrina)!  
+                    I've got individualized academic programs to fit almost every situation."</p>
+                <!--<button type="button"> Contact Ms.Patrina</button>-->
+                <a class="btn btn-primary links" href="/contact" role="button">Contact Ms.Patrina!</a>
+            </div>
+        </div>
+    </div>
+
+     <!--"Tutorial & Academic Mentoring" and "Arts, Education & Technology Institute"-->
+    <div class="container row" style="background-color: #79507A; padding-top: 30px;">
+        <div class="col-sm-6 " >
+            <img src="img/about_us_tutorial_mentoring.jpg" style="height:289px">
+            <div class="content-text">
+                <h3 class="text-center" style="color: #ffffff; padding: 20px;">Tutorial & Academic Mentoring</h3>
+                <p style="color: #ffffff;">
+                    Academic Tutorial & Mentoring Services is 
+                    where it all started, back in 2002 - 
+                    Sliding into twenty years. Students will 
+                    always excel, and on the flip side, some 
+                    need and want extra help and deserve it 
+                    (service). The Summer Tutorial & Enrichment 
+                    Program (STEP) was created to re-live, revive, 
+                    and step up the learning getting ready for 
+                    what's to come.
+                </br>
+                </br>
+                    It's challenging to measure educational 
+                    programs outside of pre and post-tests in most 
+                    programs. Still, through PIMOSH, we have moved 
+                    the ZERO student to HERO status in no time, with 
+                    simple social skills building techniques and 
+                    individual curricula design. 
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="img/about_us_arts_education.png">
+            <div class="content-text">
+                <h3 class="text-center" style="color: #ffffff; padding: 20px;">
+                    <a href="/services/art" style="color: #ffffff;" class="links">Arts</a>
+                    |
+                    <a href="/services/education" style="color: #ffffff;" class="links">Education</a>
+                    |
+                    <a href="/services/technology" style="color: #ffffff;" class="links">Technology</a> 
+                    Institute
+                </h3>
+                <p style="color: #ffffff;">
+                    PIMOSH 2021 Summer Intensive Arts Education 
+                    & Technology Institute can help students all 
+                    over catch up with their studies while 
+                    learning new social skills simultaneously.
+                    </br>
+                    </br>
+                    If anyone is ready to get back to normalcy, 
+                    it's our kids.  Your best bet for the artsy 
+                    child is PIMOSH.  Call 1.844.4.PIMOSH 
+                    (746674) to find out if we're in your area?  
+                    If not, HOW to HOST PIMOSH 2021 in your 
+                    community.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Be a Tutor|Get a Tutor section-->
+    <div class="container content-text" style="padding: 30px;">
+        <h3 class="text-center">
+            <a href="https://forms.gle/FxgqTDUdNBTDCxsk9" target="_blank" style="color:#79507A;" class="links">Be-A-Tutor</a>
+             | 
+            <a href="https://forms.gle/CHoSmQnVe132ujup7" target="_blank" style="color:#79507A;" class="links">Get-A-Tutor</a>
+        </h3>
+        <p style="padding-top: 10px;">
+            Being a Tutor-Mentor is just as easy as Getting 
+            a Tutor-Mentor through PIMOSH.  There's a brief 
+            online form you complete from the comfort of 
+            home.  Someone will respond to your inquiry, 
+            usually within 24 hours.  Meanwhile, you can 
+            download the most recent program handbook, 
+            learn more about specific programs and sign-up, 
+            or save space in one of our signature programs.  Sometimes the area is limited and adequate planning saves money and time.​​
+        </p>
+    </div>
+<!--Previous tabs code, imported from PIMOSH old website
+    <div class="container">
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {box-sizing: border-box}
+    
+            /* Set height of body and the document to 100% */
+            body 
+            {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                font-family: Arial;
+                overflow:scroll;
+                background-color: #ffffff;
+            }
+    
+            /* Style tab links */
+            .tablink 
+            {
+                background-color: #fbf9fb;
+                color: #79507A;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 10px 16px;
+                font-size: 17px;
+                width: 20%;
+                height:75px;
+            }
+    
+            .tablink:hover 
+            {
+                background-color: #777;
+                color:#fbf9fb;
+            }
+    
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent 
+            {
+                color: #79507A;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+                background-color: #f4e7f1;
+                letter-spacing: 1.5px;
+                line-height: 1.3;
+                font-weight: bold;
+            }
+    
+            h3
+            {
+                text-decoration-line: underline;
+            }
+    
+            /*
+            #tabs
+            {
+                position:fixed;
+            }*/
+            /*#f4e7f1 #79507A*/
+            #AboutUs {height:100%;}
+            #Mission {height:100%;}
+            #Diversity {height:100%;}
+            #Leadership {height:100%;}
+            #Community {height:100%;}
+        </style>
+        </head>
+        <body>
+        <div id="tabs">
+        <button class="tablink" onclick="openPage('AboutUs', this, '#f4e7f1')" id="defaultOpen">About Us</button>
+        <button class="tablink" onclick="openPage('Mission', this, '#f4e7f1')" >Our Mission</button>
+        <button class="tablink" onclick="openPage('Diversity', this, '#f4e7f1')">Diversity Statement</button>
+        <button class="tablink" onclick="openPage('Leadership', this, '#f4e7f1')">Leadership & Staff Development</button>
+        <button class="tablink" onclick="openPage('Community', this, '#f4e7f1')">Community Impact</button>
+        </div>
+    
+        <div id="AboutUs" class="tabcontent">
+        <h3>About Us</h3>
+        <p>PIMOSH is a community organization that provides children and families access to high-quality 
+            arts education and technology programs. For 20 years, we have been committed to motivating 
+            and inspiring students to reach their full potential through innovative and engaging 
+            learning experiences. 
+        <br />
+        <br />
+        Our mission is to empower young people to express themselves creatively, think critically, and 
+        develop the skills they need to succeed in today's digital world. Through our programs, we strive 
+        to foster a love of learning, build self-confidence, and provide opportunities for personal 
+        growth and achievement.
+        </p>
+        </div>
+    
+        <div id="Mission" class="tabcontent">
+        <h3>The Mission</h3>
+        <p>At PIMOSH, we envision a world where every child experiences opportunities to unlock their 
+            full potential and unleash their creativity through the power of arts and technology 
+            education. We believe that every child is capable of greatness and are committed to 
+            empowering, inspiring, and igniting their passions, nurturing their talents, and 
+            encouraging them to dream big. 
+        <br />
+        <br />
+        Together, we will bridge the gap of opportunity, fostering a community where every child 
+        is valued, supported, and challenged to achieve their wildest aspirations, where no dream 
+        is too big, and no challenge is too great. We will create a brighter future for every 
+        child and leave a lasting legacy of innovation, inspiration, and hope.
+        </p> 
+        </div>
+    
+        <div id="Diversity" class="tabcontent">
+        <h3>Diversity Statement</h3>
+        <p>Diversity and inclusion are core values of PIMOSH. Every person has unique experiences, 
+            perspectives, and talents that contribute to the richness and strength of our 
+            organization. We are committed to creating an inclusive environment where all 
+            individuals feel respected, valued, and empowered. We actively seek out and welcome 
+            overachieving individuals from diverse backgrounds and experiences and actively work 
+            to remove barriers to participation and success.<br />
+        <br />
+        We recognize that diversity goes beyond race and ethnicity. It also encompasses 
+        differences in gender, age, sexual orientation, socioeconomic status, religion, abilities, 
+        and more. We work hard to create a positive, welcoming, and inclusive environment for all 
+        members and participants of our organization. We will strive to develop a culture of equity 
+        where everyone has an equal opportunity to succeed and feels a sense of belonging.
+        <br />
+        <br />
+        We also acknowledge that inclusion and diversity are ongoing efforts. We will continuously 
+        work to identify and address any implicit bias, discrimination, and barriers that prevent 
+        individuals from fully participating in our programs and initiatives. We are committed to 
+        taking action and being held accountable for creating a genuinely inclusive environment.
+        <br />
+        <br />
+        We believe that embracing diversity and inclusion is not only the right thing to do but 
+        also essential to the success of our organization and the communities we serve.
+        </p>
+        </div>
+    
+        <div id="Leadership" class="tabcontent">
+        <h3>Leadership and Staff Development</h3>
+        <p>At PIMOSH, strong leadership and staff development are crucial to unlocking the full 
+            potential of our programs and the individuals who make them a reality. We are committed 
+            to investing in the growth and development of our program leaders and staff members, 
+            providing them with the tools and resources they need to excel in their roles.
+        <br />
+        <br />
+        We understand that leadership is about having a solid vision and the ability to inspire 
+        and empower others to achieve their best. Our leaders are passionate and dedicated individuals 
+        committed to creating a culture of excellence where everyone is encouraged to take risks and 
+        be innovative.
+        <br />
+        <br />
+        Staff development is necessary for individuals and the organization to succeed. We empower 
+        our staff to take ownership of their professional development, providing them with training, 
+        mentorship, and networking opportunities. We strive to create a culture of continuous 
+        learning where everyone has the opportunity to grow and develop.
+        <br />
+        <br />
+        We know that when our leaders and staff are empowered, motivated and inspired, it positively 
+        impacts the communities we serve. Investing in our people enhances our programs' success 
+        and creates a brighter future for all.</p>
+        </div>
+    
+        <div id="Community" class="tabcontent">
+        <h3>Community Impact</h3>
+        <p>At PIMOSH, our programs and initiatives have the power to make a positive impact on the 
+        communities we serve. We are committed to working closely with local organizations, 
+        schools, and families to understand our community's unique needs and challenges and 
+        to create programs that address them.
+        <br />
+        <br />
+        We strive to create a culture of community engagement, where we actively involve community 
+        members in the design, implementation, and evaluation of our programs. Working together 
+        with the community can create meaningful and sustainable change that benefits everyone.
+        <br />
+        <br />
+        We understand that our programs go beyond providing access to arts and technology education; 
+        they also promote social and emotional well-being, foster creativity, and build self-confidence. 
+        Our programs strive to create opportunities for personal growth, achievement, and success 
+        for all community members, especially those under-served or marginalized.
+        <br />
+        <br />
+        We are proud of our program's impact on the community and are committed to working with 
+        community members to create a brighter future for all.
+        <br />
+        <br />
+        At PIMOSH, our programs and initiatives have the power to make a positive impact on the 
+        various communities we serve. We understand that every community is unique, with different 
+        needs and challenges. We are committed to working closely with local organizations, schools, 
+        and families to understand these needs and design programs that address them. We strive to 
+        create a culture of community engagement, where we actively involve community members in the 
+        design, implementation, and evaluation of our programs.
+        <br />
+        <br />
+        We are committed to serving diverse communities and understand that diversity goes beyond 
+        race and ethnicity. It also encompasses differences in gender, age, sexual orientation, 
+        socioeconomic status, religion, abilities, and more. We strive to create opportunities that 
+        are inclusive and accessible to all members of the community, especially for those who are 
+        underserved or marginalized.
+        <br />
+        <br />
+        We are proud of our program's impact on the community and are committed to growing our efforts 
+        to reach and serve more communities. We understand that our programs go beyond providing 
+        access to arts and technology education; they also promote social and emotional well-being, 
+        foster creativity, and build self-confidence. PIMOSH dedicates its resources to creating a 
+        brighter future for all community members through our programs and initiatives.</p>
+        </div>
+    
+        <script>
+            function openPage(pageName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+            }
+        
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+        
+        </body>
+    </div> 
+--> 
+
+</body>
+
+<%- include('./partials/footer.ejs') %>

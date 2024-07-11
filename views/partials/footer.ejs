@@ -1,0 +1,62 @@
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row py-2">
+            <div class="col-md-2 text-center text-md-left mb-2 mb-md-0">
+                <small>&copy; <span id="year"></span> PIMOSH Network. All rights reserved.</small>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Tutorial Services</a></li>
+                    <li><a href="#">Be A Tutor</a></li>
+                    <li><a href="#">Get A Tutor</a></li>
+                    <li><a href="#">Download Enrollment Forms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#">Intensive Arts Institute</a></li>
+                    <li><a href="#">Download Arts Forms</a></li>
+                    <li><a href="#">Apply for Arts Jobs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="list-unstyled mb-0">
+                    <li><a href="/tech_titans">Tech Titans</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 text-center text-md-right">
+                <a href="https://www.facebook.com/pimosh.network/" target="_blank">
+                    <i class='bx bxl-facebook-circle media-links'></i>
+                </a>
+                <a href="https://www.instagram.com/pimosh/" target="_blank">
+                    <i class='bx bxl-instagram media-links'></i>
+                </a>
+                <a href="https://www.linkedin.com/company/the-pimosh-newtork" target="_blank">
+                    <i class='bx bxl-linkedin media-links'></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCT61TtmEqzzBR0VGSzte2Cw/videos" target="_blank">
+                    <i class='bx bxl-youtube media-links'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#carouselBasicExample').carousel({
+                interval: 2000
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</footer>
+</body>
+</html>
